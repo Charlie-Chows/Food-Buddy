@@ -4,8 +4,8 @@
   "description": "",
   "main": "App.js",
   "scripts": {
-    "start":"parcel index.html",
-    "build":"parcel build index.html",
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Sujith Kumar Chowdary",
@@ -16,10 +16,10 @@
   },
   "dependencies": {
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.24.0"
   },
-  "browserslist":[
- "last 2 versions" 
-]
+  "browserslist": [
+    "last 2 versions"
+  ]
 }
-
