@@ -26,11 +26,11 @@ class User extends React.Component {
         const { name, public_repos, avatar_url } = this.state.userInfo;
         
         return (
-            <div className = "user-card">
-                <img className = "avatar" src = { avatar_url } />
-                <h2> Name : { name } </h2>
-                <h3> Num of Github Repositaries : { public_repos } </h3>
-                <h4> Mail : abc@gmail.com </h4>
+            <div className = "m-5">
+                <img className = "w-52" src = { avatar_url } />
+                <h2 className = "font-thin text-lg"> Name : { name } </h2>
+                <h3 className = "font-thin text-lg"> Num of Github Repositaries : { public_repos } </h3>
+                <h4 className = "font-thin text-lg"> Mail : sujithkasthuri742@gmail.com </h4>
             </div>
         )
     }
