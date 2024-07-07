@@ -3,16 +3,15 @@ import { LOGO_URL } from "../Utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../Utils/customHooks/useOnlineStatus";
 import UserContext from "../Utils/UserContext";
+import { useSelector } from 'react-redux';
 
 const Header = ( ) => {
     const [btnName,setBtnName] = useState("Login");
 
     const OnlineStatus = useOnlineStatus();
     const { loggedInUser } = useContext(UserContext);
-    //if no dependency array useEffect called every render
-    //if dependency array is empty useEffect called on initialrender just once
-    //if something is in dependency array useEffect called/render when something update in dependency array
 
+    const cartItems = useSelector( ( store ) => store.cart.items );
     return (
         <div className = "flex justify-between bg-pink-100 shadow-lg m-2" >
             <div>
@@ -33,9 +32,11 @@ const Header = ( ) => {
                     <Link to="/about" > About </Link>      
                     </li>
                     <li className = "px-4 font-semibold" >
-                    <Link to="/contact" > Contact </Link>  
+                      
                     </li>
-                    <li className = "px-4 font-semibold" > Cart </li>
+                    <li className = "px-4 font-bold text-purple-800 text-lg" > 
+                        <Link to="/cart" > Cart - {cartItems.length} items </Link>
+                    </li>
                     <li className = "px-4" >
                     <button className="font-semibold" onClick={()=>{btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");
                     }}>{btnName} </button>
